@@ -1,4 +1,5 @@
 server/
 shared/
 *.md
-!client/
+README*
+DEPLOY_LOG.md

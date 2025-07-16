@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lorenzoalgeri.it/sitemap.xml
+
+# Disallow crawling of admin or private areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow crawling of main sections
+Allow: /#chi-sono
+Allow: /#servizi-ai
+Allow: /#servizi-chatbot
+Allow: /#automazioni
+Allow: /#contatti
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1

@@ -1,0 +1,14 @@
+{
+  "name": "professional-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Portfolio - Lorenzo Algeri AI Solutions",
+  "type": "module",
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "dev": "cd client && npm run dev",
+    "start": "cd client && npm run dev"
+  },
+  "keywords": ["portfolio", "ai", "automation", "lorenzo algeri"],
+  "author": "Lorenzo Algeri",
+  "license": "MIT"
+}

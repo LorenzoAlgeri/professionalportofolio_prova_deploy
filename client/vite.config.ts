@@ -12,10 +12,14 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    rollupOptions: {
+      external: ["drizzle-orm/pg-core", "drizzle-zod", "drizzle-orm"],
+    },
   },
   server: {
     fs: {
       strict: false,
+      deny: ["../shared/**"],
     },
   },
 });

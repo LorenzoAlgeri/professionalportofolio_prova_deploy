@@ -53,16 +53,30 @@ ${urls.map(url => `  <url>
   </url>`).join('\n')}
 </urlset>`;
 
+// Percorsi per public e dist
 const publicDir = path.join(process.cwd(), 'public');
-const sitemapPath = path.join(publicDir, 'sitemap.xml');
+const distDir = path.join(process.cwd(), 'dist');
+const publicSitemapPath = path.join(publicDir, 'sitemap.xml');
+const distSitemapPath = path.join(distDir, 'sitemap.xml');
 
-// Ensure public directory exists
+// Ensure directories exist
 if (!fs.existsSync(publicDir)) {
   fs.mkdirSync(publicDir, { recursive: true });
 }
 
-// Write sitemap
-fs.writeFileSync(sitemapPath, sitemap, 'utf8');
+if (!fs.existsSync(distDir)) {
+  fs.mkdirSync(distDir, { recursive: true });
+}
 
-console.log(`✅ Sitemap generated successfully at ${sitemapPath}`);
+// Write sitemap to both locations
+fs.writeFileSync(publicSitemapPath, sitemap, 'utf8');
+if (fs.existsSync(distDir)) {
+  fs.writeFileSync(distSitemapPath, sitemap, 'utf8');
+}
+
+console.log(`✅ Sitemap generated successfully`);
 console.log(`📄 Generated ${urls.length} URLs`);
+console.log(`📁 Saved to: ${publicSitemapPath}`);
+if (fs.existsSync(distDir)) {
+  console.log(`📁 Copied to: ${distSitemapPath}`);
+}

@@ -9,8 +9,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { insertContactSchema, type InsertContact } from "@/lib/schemas";
+import { insertContactSchema } from "@shared/schema";
 import { Mail, Phone, MapPin } from "lucide-react";
+import type { InsertContact } from "@shared/schema";
 
 export default function ContactSection() {
   const { toast } = useToast();
